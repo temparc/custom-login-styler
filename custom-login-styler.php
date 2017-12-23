@@ -17,7 +17,6 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
         // slug for options page & settings link
         public $plugin_slug = 'custom-login-styler';
 
-
         /**
          * Init plugin
          */
@@ -30,7 +29,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
         /**
          * Initialization functions
          */
-        public function init(){
+        public function init() {
 
             $plugin = plugin_basename( __FILE__ );
 
@@ -78,7 +77,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
             );
 
             // register options and settings via settings api
-            foreach ( $options as $option ){
+            foreach ( $options as $option ) {
 
                 add_option( $option );
 
@@ -108,7 +107,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
         /**
          * Options page html
          */
-        public function add_login_menu_page_output(){ ?>
+        public function add_login_menu_page_output() { ?>
 
             <div class="wrap temparc-custom-login">
                 <h1>Custom Login Page Settings</h1>
@@ -128,12 +127,12 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                                 </th>
                                 <td>
                                     <div class="img-wrap">
-                                        <div class='image-preview-wrapper'>
+                                        <div class='image-preview-wrapper' id="login-preview">
                                             <?php if ( !empty( get_option( 'tmprc_login_image_id' ) ) ) { ?>
                                             <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'thumbnail' )[0]; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
                                             <?php } ?>
                                         </div>
-                                        <input id="tmprc_login_image" type="button" class="button-primary tmprc-media-upload" value="<?php _e( 'Upload image' ); ?>" />
+                                        <input id="tmprc_login_button" type="button" class="button-primary tmprc-media-upload" value="<?php _e( 'Upload image' ); ?>" />
                                         <input type='hidden' class="image-id" name='tmprc_login_image_id' id='tmprc_login_image_id' value="<?php echo esc_attr( get_option( 'tmprc_login_image_id' ) ); ?>">
                                     </div>
                                     <br>
@@ -186,14 +185,17 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                                 </th>
                                 <td>
                                     <div class="img-wrap">
-                                        <div class='image-preview-wrapper'>
+                                        <div class='image-preview-wrapper' id="background-preview">
+
                                         <?php if ( !empty( get_option( 'tmprc_login_background_image_id' ) ) ) { ?>
                                             <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_background_image_id' ), 'thumbnail' )[0]; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
                                         <?php } ?>
                                         </div>
 
-                                        <input id="tmprc_login_background_image_id" type="button" class="button-primary tmprc-media-upload" value="<?php _e( 'Upload image' ); ?>" />
+                                        <input type="button" class="button-primary tmprc-media-upload" id="tmprc_background_button" value="<?php _e( 'Upload image' ); ?>" />
+
                                         <input type='hidden' name='tmprc_login_background_image_id' id='tmprc_login_background_image_id' class="image-id" value="<?php echo esc_attr( get_option( 'tmprc_login_background_image_id' ) ); ?>">
+
                                     </div>
                                     <br>
                                     <span class="description">Background image for the login page. This will override any background color settings</span>
