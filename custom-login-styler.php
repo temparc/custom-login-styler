@@ -309,7 +309,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
 
             }
 
-            $css .= strip_tags( get_option( 'tmprc_login_css' ) );
+            $css .= wp_strip_all_tags( get_option( 'tmprc_login_css' ) );
 
             // add css to existing stylesheet
             wp_add_inline_style( 'custom-login-styler', wp_strip_all_tags( $css ) );
