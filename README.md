@@ -1,4 +1,4 @@
-# custom-login-styler
+# WordPress Custom Login Page Styler Plugin
 
 ## Synopsis
 
