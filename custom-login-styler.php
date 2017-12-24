@@ -322,7 +322,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
          */
         public function wp_is_login() {
 
-            return in_array( $GLOBALS[ 'pagenow' ], array( 'wp-login.php' , 'wp-register.php' ) );
+            return in_array( $GLOBALS[ 'pagenow' ], array( 'wp-login.php' ) );
 
         }
 
