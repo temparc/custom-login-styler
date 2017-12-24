@@ -111,7 +111,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
 
             <div class="wrap temparc-custom-login">
                 <h1>Custom Login Page Settings</h1>
-                <span class="description">A simple and easy way to customize the default admin login page | by <a href="https://temparcweb.com/">Temparc Web</a> | <a href="">Plugin Details</a></span>
+                <span class="description">A simple and easy way to customize the default admin login page | by <a href="https://temparcweb.com/">Temparc Web</a> | <a href="https://github.com/temparc/custom-login-styler">Plugin Details</a></span>
                 <form method="post" action="options.php">
                     <?php
                     settings_fields( $this->plugin_slug );
