@@ -111,113 +111,113 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
 
             <div class="wrap temparc-custom-login">
                 <h1>Custom Login Page Settings</h1>
-                <span class="description">A simple and easy way to customize the default admin login page | by <a href="https://temparcweb.com/">Temparc Web</a> | <a href="https://github.com/temparc/custom-login-styler">Plugin Details</a></span>
+                <span class="description">A simple and easy way to customize the default admin login page | by <a href="https://temparcweb.com/">Temparc Web</a> | <a href="">Plugin Details</a></span>
                 <form method="post" action="options.php">
                     <?php
                     settings_fields( $this->plugin_slug );
                     do_settings_sections( $this->plugin_slug );
                     wp_enqueue_media();
                     ?>
-            <table class="form-table">
-                <input type="hidden" id="post_id" value="<?php echo get_option( 'media_selector_attachment_id' ); ?>">
+                    <table class="form-table">
+                        <input type="hidden" id="post_id" value="<?php echo get_option( 'media_selector_attachment_id' ); ?>">
                         <tbody>
-                            <tr>
-                                <th scope="row">
-                                    <label for="image_attachment_id">Login Logo Image</label>
-                                </th>
-                                <td>
-                                    <div class="img-wrap">
-                                        <div class='image-preview-wrapper' id="login-preview">
-                                            <?php if ( !empty( get_option( 'tmprc_login_image_id' ) ) ) { ?>
+                        <tr>
+                            <th scope="row">
+                                <label for="image_attachment_id">Login Logo Image</label>
+                            </th>
+                            <td>
+                                <div class="img-wrap">
+                                    <div class='image-preview-wrapper' id="login-preview">
+                                        <?php if ( !empty( get_option( 'tmprc_login_image_id' ) ) ) { ?>
                                             <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'thumbnail' )[0]; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
-                                            <?php } ?>
-                                        </div>
-                                        <input id="tmprc_login_button" type="button" class="button-primary tmprc-media-upload" value="<?php _e( 'Upload image' ); ?>" />
-                                        <input type='hidden' class="image-id" name='tmprc_login_image_id' id='tmprc_login_image_id' value="<?php echo esc_attr( get_option( 'tmprc_login_image_id' ) ); ?>">
+                                        <?php } ?>
                                     </div>
-                                    <br>
-                                    <span class="description">The image that appears above the login form</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="tmprc_logo_link">Login Link URL</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="tmprc_logo_link" name="tmprc_logo_link" value="<?php echo esc_attr( get_option( 'tmprc_logo_link' ) ); ?>">
-                                    <br>
-                                    <span class="description">The image's link destination. Defaults to your home page URL</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="tmprc_color_primary">Primary Color</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="tmprc_color_primary" name="tmprc_color_primary" value="<?php echo esc_attr( get_option( 'tmprc_color_primary' ) ); ?>">
-                                    <br>
-                                    <span class="description">Color of the form borders and text</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="tmprc_color_primary">Secondary Color</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="tmprc_color_secondary" name="tmprc_color_secondary" value="<?php echo esc_attr( get_option( 'tmprc_color_secondary' ) ); ?>">
-                                    <br>
-                                    <span class="description">Color of the form buttons</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="tmprc_color_background">Background Color</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="tmprc_color_background" name="tmprc_color_background" value="<?php echo esc_attr( get_option( 'tmprc_color_background' ) ); ?>">
-                                    <br>
-                                    <span class="description">Color of the whole page background</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="tmprc_login_background_image_id">Background Image</label>
-                                </th>
-                                <td>
-                                    <div class="img-wrap">
-                                        <div class='image-preview-wrapper' id="background-preview">
+                                    <input id="tmprc_login_button" type="button" class="button-primary tmprc-media-upload" value="<?php _e( 'Upload image' ); ?>" />
+                                    <input type='hidden' class="image-id" name='tmprc_login_image_id' id='tmprc_login_image_id' value="<?php echo esc_attr( get_option( 'tmprc_login_image_id' ) ); ?>">
+                                </div>
+                                <br>
+                                <span class="description">The image that appears above the login form</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="tmprc_logo_link">Login Link URL</label>
+                            </th>
+                            <td>
+                                <input type="text" id="tmprc_logo_link" name="tmprc_logo_link" value="<?php echo esc_attr( get_option( 'tmprc_logo_link' ) ); ?>">
+                                <br>
+                                <span class="description">The image's link destination. Defaults to your home page URL</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="tmprc_color_primary">Primary Color</label>
+                            </th>
+                            <td>
+                                <input type="text" id="tmprc_color_primary" name="tmprc_color_primary" value="<?php echo esc_attr( get_option( 'tmprc_color_primary' ) ); ?>">
+                                <br>
+                                <span class="description">Color of the form borders and text</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="tmprc_color_primary">Secondary Color</label>
+                            </th>
+                            <td>
+                                <input type="text" id="tmprc_color_secondary" name="tmprc_color_secondary" value="<?php echo esc_attr( get_option( 'tmprc_color_secondary' ) ); ?>">
+                                <br>
+                                <span class="description">Color of the form buttons</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="tmprc_color_background">Background Color</label>
+                            </th>
+                            <td>
+                                <input type="text" id="tmprc_color_background" name="tmprc_color_background" value="<?php echo esc_attr( get_option( 'tmprc_color_background' ) ); ?>">
+                                <br>
+                                <span class="description">Color of the whole page background</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="tmprc_login_background_image_id">Background Image</label>
+                            </th>
+                            <td>
+                                <div class="img-wrap">
+                                    <div class='image-preview-wrapper' id="background-preview">
 
                                         <?php if ( !empty( get_option( 'tmprc_login_background_image_id' ) ) ) { ?>
                                             <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_background_image_id' ), 'thumbnail' )[0]; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
                                         <?php } ?>
-                                        </div>
-
-                                        <input type="button" class="button-primary tmprc-media-upload" id="tmprc_background_button" value="<?php _e( 'Upload image' ); ?>" />
-
-                                        <input type='hidden' name='tmprc_login_background_image_id' id='tmprc_login_background_image_id' class="image-id" value="<?php echo esc_attr( get_option( 'tmprc_login_background_image_id' ) ); ?>">
-
                                     </div>
-                                    <br>
-                                    <span class="description">Background image for the login page. This will override any background color settings</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="tmprc_login_css">Custom CSS</label>
-                                </th>
-                                <td>
-                                    <textarea style="height:200px;width: 100%;overflow:auto;" name="tmprc_login_css" id="tmprc_login_css"><?php echo esc_attr( get_option( 'tmprc_login_css' ) ); ?></textarea>
-                                    <br>
-                                    <span class="description">Add any custom css here to override whatever you'd like</span>
-                                </td>
-                            </tr>
+
+                                    <input type="button" class="button-primary tmprc-media-upload" id="tmprc_background_button" value="<?php _e( 'Upload image' ); ?>" />
+
+                                    <input type='hidden' name='tmprc_login_background_image_id' id='tmprc_login_background_image_id' class="image-id" value="<?php echo esc_attr( get_option( 'tmprc_login_background_image_id' ) ); ?>">
+
+                                </div>
+                                <br>
+                                <span class="description">Background image for the login page. This will override any background color settings</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="tmprc_login_css">Custom CSS</label>
+                            </th>
+                            <td>
+                                <textarea style="height:200px;width: 100%;overflow:auto;" name="tmprc_login_css" id="tmprc_login_css"><?php echo esc_attr( get_option( 'tmprc_login_css' ) ); ?></textarea>
+                                <br>
+                                <span class="description">Add any custom css here to override whatever you'd like</span>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                     <p class="submit"><?php submit_button(); ?></p>
                 </form>
             </div>
 
-        <?php
+            <?php
 
         }
 
@@ -263,13 +263,13 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
             //register styles
             wp_enqueue_style(
                 'custom-login-styler',
-                plugins_url() . '/custom-login-styler/css/login.css'
+                plugins_url( '/css/login.css', __FILE__ )
             );
 
             $logo_img = wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ) )[0];
 
-           // generate css output
-           $css =  '.login #login_error, .login .message{
+            // generate css output
+            $css =  '.login #login_error, .login .message{
                 border-color: '. get_option( 'tmprc_color_primary' ) .';
             }
             body.login{
@@ -335,7 +335,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
             // load scripts
             if ( 'settings_page_' . $this->plugin_slug == get_current_screen()->id ) {
 
-            wp_enqueue_script( 'tmprc-custom-login-script', plugins_url() .'/custom-login-styler/js/custom-login-styler.js', array( 'jquery' ) );
+                wp_enqueue_script( 'tmprc-custom-login-script',  plugins_url( '/js/custom-login-styler.js', __FILE__ ), array( 'jquery' ) );
 
             }
 
