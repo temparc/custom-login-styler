@@ -129,7 +129,10 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                                 <div class="img-wrap">
                                     <div class='image-preview-wrapper' id="login-preview">
                                         <?php if ( !empty( get_option( 'tmprc_login_image_id' ) ) ) { ?>
-                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'thumbnail' )[0]; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
+                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'thumbnail' )[0]; ?>' height='150' width="auto">
+                                            <br>
+                                            <input type="button" class="button-primary tmprc_delete_image" value="<?php _e( 'X Remove image' ); ?>" />
+                                            <br><br>
                                         <?php } ?>
                                     </div>
                                     <input id="tmprc_login_button" type="button" class="button-primary tmprc-media-upload" value="<?php _e( 'Upload image' ); ?>" />
@@ -188,7 +191,10 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                                     <div class='image-preview-wrapper' id="background-preview">
 
                                         <?php if ( !empty( get_option( 'tmprc_login_background_image_id' ) ) ) { ?>
-                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_background_image_id' ), 'thumbnail' )[0]; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
+                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_background_image_id' ), 'thumbnail' )[0]; ?>' height='150' width="auto">
+                                            <br>
+                                            <input type="button" class="button-primary tmprc_delete_image" value="<?php _e( 'X Remove image' ); ?>" />
+                                            <br><br>
                                         <?php } ?>
                                     </div>
 

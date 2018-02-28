@@ -3,22 +3,22 @@ jQuery(document).ready(function($) {
     var frame,
         addImgLink = $('.tmprc-media-upload');
 
-        // ADD IMAGE LINK
-        addImgLink.on( 'click', function( event ){
+    // ADD IMAGE LINK
+    addImgLink.on( 'click', function( event ){
 
-            event.preventDefault();
+        event.preventDefault();
 
-            var imgIdInput = $(this).closest('.img-wrap').find('.image-id').first();
-            var imgContainer = $(this).closest('.img-wrap').find('.image-preview-wrapper').first();
+        var imgIdInput = $(this).closest('.img-wrap').find('.image-id').first();
+        var imgContainer = $(this).closest('.img-wrap').find('.image-preview-wrapper').first();
 
-            // Create a new media frame
-            frame = wp.media({
-                title: 'Select or Upload Media',
-                button: {
-                    text: 'Use this media'
-                },
-                multiple: false  // Set to true to allow multiple files to be selected
-            });
+        // Create a new media frame
+        frame = wp.media({
+            title: 'Select or Upload Media',
+            button: {
+                text: 'Use this media'
+            },
+            multiple: false  // Set to true to allow multiple files to be selected
+        });
 
         // When an image is selected in the media frame...
         frame.on( 'select', function() {
@@ -37,6 +37,13 @@ jQuery(document).ready(function($) {
 
         // Finally, open the modal on click
         frame.open();
+    });
+
+    // remove image
+    $( '.tmprc_delete_image').click( function(){
+        $(this).closest('.img-wrap').find('.image-id').val('');
+        $(this).closest('.img-wrap').find('.image-preview').hide();
+        $(this).hide();
     });
 
 });
