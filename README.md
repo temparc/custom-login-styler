@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-A very simple WordPress plugin for styling the wp-login page. This plugin adds a settings page to the WordPress admin settings menu to manage custom colors, images, or css and adds it to your wp-login.php page.
+A very simple & lean WordPress plugin for styling the wp-login page. This plugin adds a settings page to the WordPress admin settings menu to manage custom colors, images, or css and adds it to your wp-login.php page.
 
 ## Installation
 

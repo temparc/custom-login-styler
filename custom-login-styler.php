@@ -272,6 +272,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                 plugins_url( '/css/login.css', __FILE__ )
             );
 
+            // login logo image src
             $logo_img = wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'medium' )[0];
 
             // generate css output
@@ -319,9 +320,10 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
 
             }
 
+            // custom user inputted css
             $css .= wp_strip_all_tags( get_option( 'tmprc_login_css' ) );
 
-            // add css to existing stylesheet
+            // add css to existing stylesheet last overriding styles above
             wp_add_inline_style( 'custom-login-styler', wp_strip_all_tags( $css ) );
 
         }
