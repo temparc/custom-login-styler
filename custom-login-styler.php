@@ -129,7 +129,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                                 <div class="img-wrap">
                                     <div class='image-preview-wrapper' id="login-preview">
                                         <?php if ( !empty( get_option( 'tmprc_login_image_id' ) ) ) { ?>
-                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'thumbnail' )[0]; ?>' height='150' width="auto">
+                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'medium' )[0]; ?>' style="padding-bottom:10px;">
                                             <br>
                                             <input type="button" class="button-primary tmprc_delete_image" value="<?php _e( 'X Remove image' ); ?>" />
                                             <br><br>
@@ -154,7 +154,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                         </tr>
                         <tr>
                             <th scope="row">
-                                <label for="tmprc_color_primary">Primary Color</label>
+                                <label for="tmprc_color_primary">Primary Color (HEX code)</label>
                             </th>
                             <td>
                                 <input type="text" id="tmprc_color_primary" name="tmprc_color_primary" value="<?php echo esc_attr( get_option( 'tmprc_color_primary' ) ); ?>">
@@ -164,7 +164,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                         </tr>
                         <tr>
                             <th scope="row">
-                                <label for="tmprc_color_primary">Secondary Color</label>
+                                <label for="tmprc_color_primary">Secondary Color (HEX code)</label>
                             </th>
                             <td>
                                 <input type="text" id="tmprc_color_secondary" name="tmprc_color_secondary" value="<?php echo esc_attr( get_option( 'tmprc_color_secondary' ) ); ?>">
@@ -174,7 +174,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                         </tr>
                         <tr>
                             <th scope="row">
-                                <label for="tmprc_color_background">Background Color</label>
+                                <label for="tmprc_color_background">Background Color (HEX code)</label>
                             </th>
                             <td>
                                 <input type="text" id="tmprc_color_background" name="tmprc_color_background" value="<?php echo esc_attr( get_option( 'tmprc_color_background' ) ); ?>">
@@ -191,7 +191,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                                     <div class='image-preview-wrapper' id="background-preview">
 
                                         <?php if ( !empty( get_option( 'tmprc_login_background_image_id' ) ) ) { ?>
-                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_background_image_id' ), 'thumbnail' )[0]; ?>' height='150' width="auto">
+                                            <img class='image-preview' src='<?php echo wp_get_attachment_image_src( get_option( 'tmprc_login_background_image_id' ), 'medium' )[0]; ?>' style="padding-bottom:10px;">
                                             <br>
                                             <input type="button" class="button-primary tmprc_delete_image" value="<?php _e( 'X Remove image' ); ?>" />
                                             <br><br>
@@ -272,7 +272,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                 plugins_url( '/css/login.css', __FILE__ )
             );
 
-            $logo_img = wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ) )[0];
+            $logo_img = wp_get_attachment_image_src( get_option( 'tmprc_login_image_id' ), 'medium' )[0];
 
             // generate css output
             $css =  '.login #login_error, .login .message{
@@ -282,7 +282,7 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                 background-image: url(\''. wp_get_attachment_image_src( get_option( 'tmprc_login_background_image_id' ), 'full' )[0].'\');
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center top;
+                background-position: center;
                 background-color: '. get_option( 'tmprc_color_background' ) .';
             }
             body.login div#login form#loginform {
@@ -311,6 +311,10 @@ if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
                 $css .= '#login h1 a, .login h1 a {
                         background-image: url( \''.$logo_img.'\' );
                         padding-bottom: 30px;
+                        background-size: contain;
+                        height: auto;
+                        width: auto;
+                        max-width: 100%;
                     }';
 
             }

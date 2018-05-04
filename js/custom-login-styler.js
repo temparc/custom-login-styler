@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 
             // Send the attachment URL to our custom image input field.
             imgContainer.find( 'img' ).remove();
-            imgContainer.append( '<img src="'+attachment.url+'" alt="" style="width:auto;height:150px;">' );
+            imgContainer.append( '<img src="'+attachment.url+'" alt="" style="width:150px;height:auto;margin-bottom:15px;">' );
 
             // Send the attachment id to our hidden input
             imgIdInput.val( attachment.id );
