@@ -10,7 +10,7 @@ Add the plugin to your wp-content/plugins folder and activate it from /wp-admin/
 
 ## Tests
 
-Tested with WordPress version 4.9.1
+Tested with WordPress version 4.9.5
 
 ## License
 
