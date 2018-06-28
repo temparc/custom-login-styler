@@ -1,0 +1,14 @@
+{
+    "name": "temparcweb/custom-login-styler",
+    "description": "A very lean WordPress plugin for customizing the login page.",
+    "type": "wordpress-plugin",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Philip James de Vries",
+            "email": "phil@temparcweb.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
