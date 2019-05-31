@@ -10,6 +10,10 @@ License:      GPL2
 Text Domain:  temparc
 */
 
+if( ! defined( 'ABSPATH' ) ) {
+    die;
+}
+
 if ( ! class_exists( 'Tmprc_Custom_Login_Styler' ) ) {
 
     class Tmprc_Custom_Login_Styler {
